@@ -1,6 +1,7 @@
 dependencies:
   discord.js: 12.3.1
   dotenv: 8.2.0
+  prettier: 2.1.2
 lockfileVersion: 5.1
 packages:
   /@discordjs/collection/0.1.6:
@@ -14,7 +15,7 @@ packages:
       mime-types: 2.1.27
     dev: false
     engines:
-      node: '>= 6'
+      node: ">= 6"
     resolution:
       integrity: sha512-ZfFsbgEXW71Rw/6EtBdrP5VxBJy4dthyC0tpQKGKmYFImlmmrykO14Za+BiIVduwjte0jXEBlhSKf0MWbFp9Eg==
   /abort-controller/3.0.0:
@@ -22,7 +23,7 @@ packages:
       event-target-shim: 5.0.1
     dev: false
     engines:
-      node: '>=6.5'
+      node: ">=6.5"
     resolution:
       integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
   /asynckit/0.4.0:
@@ -34,19 +35,19 @@ packages:
       delayed-stream: 1.0.0
     dev: false
     engines:
-      node: '>= 0.8'
+      node: ">= 0.8"
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
   /delayed-stream/1.0.0:
     dev: false
     engines:
-      node: '>=0.4.0'
+      node: ">=0.4.0"
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
   /discord.js/12.3.1:
     dependencies:
-      '@discordjs/collection': 0.1.6
-      '@discordjs/form-data': 3.0.1
+      "@discordjs/collection": 0.1.6
+      "@discordjs/form-data": 3.0.1
       abort-controller: 3.0.0
       node-fetch: 2.6.1
       prism-media: 1.2.2
@@ -55,25 +56,25 @@ packages:
       ws: 7.3.1
     dev: false
     engines:
-      node: '>=12.0.0'
+      node: ">=12.0.0"
     resolution:
       integrity: sha512-mSFyV/mbvzH12UXdS4zadmeUf8IMQOo/YdunubG1wWt1xjWvtaJz/s9CGsFD2B5pTw1W/LXxxUbrQjIZ/xlUdw==
   /dotenv/8.2.0:
     dev: false
     engines:
-      node: '>=8'
+      node: ">=8"
     resolution:
       integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /event-target-shim/5.0.1:
     dev: false
     engines:
-      node: '>=6'
+      node: ">=6"
     resolution:
       integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
   /mime-db/1.44.0:
     dev: false
     engines:
-      node: '>= 0.6'
+      node: ">= 0.6"
     resolution:
       integrity: sha512-/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZGJAZ/6lkKCitSc/Nmpg==
   /mime-types/2.1.27:
@@ -81,7 +82,7 @@ packages:
       mime-db: 1.44.0
     dev: false
     engines:
-      node: '>= 0.6'
+      node: ">= 0.6"
     resolution:
       integrity: sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
   /node-fetch/2.6.1:
@@ -90,15 +91,22 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  /prettier/2.1.2:
+    dev: false
+    engines:
+      node: ">=10.13.0"
+    hasBin: true
+    resolution:
+      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
   /prism-media/1.2.2:
     dev: false
     peerDependencies:
-      '@discordjs/opus': ^0.1.0
+      "@discordjs/opus": ^0.1.0
       ffmpeg-static: ^2.4.0 || ^3.0.0
       node-opus: ^0.3.1
       opusscript: ^0.0.6
     peerDependenciesMeta:
-      '@discordjs/opus':
+      "@discordjs/opus":
         optional: true
       ffmpeg-static:
         optional: true
@@ -119,7 +127,7 @@ packages:
   /ws/7.3.1:
     dev: false
     engines:
-      node: '>=8.3.0'
+      node: ">=8.3.0"
     peerDependencies:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
@@ -133,3 +141,4 @@ packages:
 specifiers:
   discord.js: ^12.3.1
   dotenv: ^8.2.0
+  prettier: ^2.1.2
