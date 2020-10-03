@@ -23,12 +23,6 @@ client.once("ready", () => {
     }, 1800000);
 });
 
-dbl.on('posted', () => {
-  console.log('Server count posted!');
-})
-
-`gle\nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle \nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle\n`;
-
 client.on("message", async (message) => {
   //console.log(`${message.author.tag} - ${message.content}`)
   if (message.author.bot) return;
