@@ -19,8 +19,12 @@ client.once("ready", () => {
     console.log(`  -${x.name} - ${x.id} (${x.members.cache.size} members)`)
   );
   setInterval(() => {
-        dbl.postStats(client.guilds.cache.size, client.shards.Id, client.shards.total);
-    }, 1800000);
+    dbl.postStats(
+      client.guilds.cache.size,
+      client.shards.Id,
+      client.shards.total
+    );
+  }, 1800000);
 });
 
 client.on("message", async (message) => {
