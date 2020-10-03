@@ -1,6 +1,9 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.TOPGG, client);
+
 const config = require("./config.js");
 const fs = require("fs");
 
@@ -15,9 +18,16 @@ client.once("ready", () => {
   client.guilds.cache.forEach((x) =>
     console.log(`  -${x.name} - ${x.id} (${x.members.cache.size} members)`)
   );
+  setInterval(() => {
+        dbl.postStats(client.guilds.cache.size, client.shards.Id, client.shards.total);
+    }, 1800000);
 });
 
-let wiggle = `wiggle\nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle \nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle\n`;
+dbl.on('posted', () => {
+  console.log('Server count posted!');
+})
+
+`gle\nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle \nwiggle\n wiggle\n  wiggle\n   wiggle\n    wiggle\n     wiggle\n      wiggle\n       wiggle\n        wiggle\n        wiggle\n       wiggle\n      wiggle\n     wiggle\n    wiggle\n   wiggle\n  wiggle\n wiggle\nwiggle\n`;
 
 client.on("message", async (message) => {
   //console.log(`${message.author.tag} - ${message.content}`)
