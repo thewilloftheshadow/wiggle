@@ -35,7 +35,7 @@ client.on("message", async (message) => {
   if (config.blacklist.includes(message.guild.id)) return;
 
   if (message.content.toLowerCase().includes("wiggle"))
-    message.channel.send(wiggle);
+    message.channel.send(config.wiggle);
 
   if (message.content == ";;ping") {
     let m = await message.channel.send("Pinging...");
