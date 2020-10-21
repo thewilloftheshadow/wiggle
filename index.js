@@ -28,7 +28,7 @@ client.once("ready", () => {
     //   client.shards.Id,
     //   client.shards.total
     // );
-    axios.post(`/bots/${client.user.id}/stats`, {
+    dbl.post(`/bots/${client.user.id}/stats`, {
       guilds: client.guilds.cache.size,
       users: client.users.cache.size
     })
