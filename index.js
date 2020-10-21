@@ -1,8 +1,12 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.TOPGG, client);
+const TOPGG = require("dblapi.js"), topgg = new TOPGG(process.env.TOPGG, client);
+const axios = require("axios"), dbl = axios.create({
+  baseURL: 'https://discordbotlist.com/api/v1',
+  timeout: 1000,
+  headers: {'Authorization': process.env.DBL}
+});
 
 const config = require("./config.js");
 const fs = require("fs");
@@ -19,11 +23,15 @@ client.once("ready", () => {
     console.log(`  -${x.name} - ${x.id} (${x.members.cache.size} members)`)
   );
   setInterval(() => {
-    dbl.postStats(
-      client.guilds.cache.size,
-      client.shards.Id,
-      client.shards.total
-    );
+    // topgg.postStats(
+    //   client.guilds.cache.size,
+    //   client.shards.Id,
+    //   client.shards.total
+    // );
+    axios.post(`/bots/${client.user.id}/stats`, {
+      guilds: client.guilds.cache.size,
+      users: client.users.cache.size
+    })
   }, 1800000);
 });
 
