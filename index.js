@@ -1,15 +1,30 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const TOPGG = require("dblapi.js")//, topgg = new TOPGG(process.env.TOPGG, client);
-const axios = require("axios"), dbl = axios.create({
-  baseURL: 'https://discordbotlist.com/api/v1',
-  timeout: 1000,
-  headers: {'Authorization': process.env.DBL}
-});
+const TOPGG = require("dblapi.js"); //, topgg = new TOPGG(process.env.TOPGG, client);
+const axios = require("axios"),
+  dbl = axios.create({
+    baseURL: "https://discordbotlist.com/api/v1",
+    timeout: 1000,
+    headers: { Authorization: process.env.DBL },
+  });
 
 const config = require("./config.js");
 const fs = require("fs");
+
+function post() {
+  // topgg.postStats(
+  //   client.guilds.cache.size,
+  //   client.shards.Id,
+  //   client.shards.total
+  // );
+  dbl.post(`/bots/${client.user.id}/stats`, {
+    guilds: client.guilds.cache.size,
+    users: client.users.cache.size,
+  });
+  return true;
+}
+
 
 client.once("ready", () => {
   console.log(
@@ -22,17 +37,8 @@ client.once("ready", () => {
   client.guilds.cache.forEach((x) =>
     console.log(`  -${x.name} - ${x.id} (${x.members.cache.size} members)`)
   );
-  setInterval(() => {
-    // topgg.postStats(
-    //   client.guilds.cache.size,
-    //   client.shards.Id,
-    //   client.shards.total
-    // );
-    dbl.post(`/bots/${client.user.id}/stats`, {
-      guilds: client.guilds.cache.size,
-      users: client.users.cache.size
-    })
-  }, 1800000);
+  post();
+  setInterval(post, 1800000);
 });
 
 client.on("message", async (message) => {
