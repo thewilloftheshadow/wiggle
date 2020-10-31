@@ -1,7 +1,7 @@
 require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const TOPGG = require("dblapi.js"); //, topgg = new TOPGG(process.env.TOPGG, client);
+const TOPGG = require("dblapi.js"), topgg = new TOPGG(process.env.TOPGG, client);
 const axios = require("axios"),
   dbl = axios.create({
     baseURL: "https://discordbotlist.com/api/v1",
