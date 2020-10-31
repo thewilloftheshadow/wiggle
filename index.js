@@ -13,11 +13,11 @@ const config = require("./config.js");
 const fs = require("fs");
 
 function post() {
-  // topgg.postStats(
-  //   client.guilds.cache.size,
-  //   client.shards.Id,
-  //   client.shards.total
-  // );
+  topgg.postStats(
+    client.guilds.cache.size,
+    client.shards.Id,
+    client.shards.total
+  );
   dbl.post(`/bots/${client.user.id}/stats`, {
     guilds: client.guilds.cache.size,
     users: client.users.cache.size,
