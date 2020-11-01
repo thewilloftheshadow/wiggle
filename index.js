@@ -14,9 +14,7 @@ const fs = require("fs");
 
 function post() {
   topgg.postStats(
-    client.guilds.cache.size,
-    client.shards.Id,
-    client.shards.total
+    client.guilds.cache.size
   );
   dbl.post(`/bots/${client.user.id}/stats`, {
     guilds: client.guilds.cache.size,
@@ -40,6 +38,12 @@ client.once("ready", () => {
   post();
   setInterval(post, 1800000);
 });
+
+client.on("guildCreate", async (guild) => {
+  let msg = `New Guild: ${guild.name} (${guild.id}) - ${guild.members.cache.size} members`
+  console.log(msg)
+  client.channels.cache.get("757976232292909119").send(msg)
+})
 
 client.on("message", async (message) => {
   //console.log(`${message.author.tag} - ${message.content}`)
