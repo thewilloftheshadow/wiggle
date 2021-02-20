@@ -24,7 +24,7 @@ client.once("ready", () => {
 });
 
 client.on("guildCreate", async (guild) => {
-  let msg = `New Guild: ${guild.name} (${guild.id}) - ${guild.members.cache.size} members`
+  let msg = `New Guild: ${guild.name} (${guild.id})`
   console.log(msg)
   client.channels.cache.get("757976232292909119").send(msg)
 })
