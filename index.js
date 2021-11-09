@@ -1,6 +1,6 @@
 require("dotenv").config();
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const client = new Discord.Client({intents: ["GUILD_MESSAGES"]});
 const AutoPoster = require('topgg-autoposter'), ap = AutoPoster(process.env.TOPGG, client)
 const config = require("./config.js");
 const fs = require("fs");
@@ -55,7 +55,7 @@ client.on("message", async (message) => {
       .setTimestamp();
 
     m.delete();
-    await message.channel.send(embed);
+    await message.channel.send({embeds: [embed]});
   }
 });
 
